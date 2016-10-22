@@ -1,29 +1,24 @@
- export default function() {
-  this.namespace = 'https://localhost:3000/api/v1';
-  let rentals = [{
-    type: 'cruds',
-    id: '1',
-    attributes: {
-      name: 'Grand Old Mansion',
-      class: true
-    }
-  }, {
-    type: 'cruds',
-    id: '2',
-    attributes: {
-      name: 'Urban Living',
-      class: true
-    }
-  }, {
-    type: 'cruds',
-    id: '3',
-    attributes: {
-      name: 'Downtown Charm',
-      class: false
-    }
-  }];
+export default function() {
+  this.urlPrefix = 'https://localhost:3000/';
+  this.namespace = 'api/v1/';
 
-  this.get('/cruds');
-  this.post('cruds');
-  
+  let pathLists = [
+    'classic-cruds',
+    'classics'
+  ];
+
+  // rest services for different generators
+  pathLists.forEach((item) => {
+    restServices(this, item);
+  });
+
+}
+
+function restServices(self, path) {
+  self.post(`${path}`);
+  self.get(`${path}`);
+  self.get(`${path}/:id`);
+  self.put(`${path}/:id`);
+  self.patch(`${path}/:id`);
+  self.del(`${path}/:id`);
 }

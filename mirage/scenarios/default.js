@@ -7,5 +7,20 @@ export default function( server ) {
     Make sure to define a factory for each model you want to create.
   */
 
-  server.createList('crud', 10);
+  // server.createList('crud', 10);
+  // server.createList('classic', 10);
+  let pathLists = [
+    'classic-crud',
+    'classic'
+  ];
+
+  
+  pathLists.forEach((item) => {
+   seedDatabase(server, item, 10);
+  })
+ 
+}
+
+function seedDatabase(server, path, count) {
+	server.createList(path, count);
 }

@@ -1,0 +1,17 @@
+<div class="container">
+	<div class="col-md-3">
+		{{#link-to 'classic-cruds.new' tagname="button" }}New{{/link-to}}
+		<ul>
+		  {{#each model as |classicCrud|}}
+				<li>
+				  {{#link-to 'classic-cruds.classic-crud.show' classicCrud tagname="button" }}
+				    {{classicCrud.classicCrud}}
+				  {{/link-to}}
+				</li>
+			{{/each}}
+		</ul>
+	</div>
+	<div class="col-md-9">
+		{{outlet}}
+	</div>
+</div>

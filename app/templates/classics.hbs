@@ -1,0 +1,17 @@
+<div class="container">
+	<div class="col-md-3">
+		{{#link-to 'classics.new' tagname="button" }}New{{/link-to}}
+		<ul>
+		  {{#each model as |classic|}}
+				<li>
+				  {{#link-to 'classics.classic.show' classic tagname="button" }}
+				    {{classic.classic}}
+				  {{/link-to}}
+				</li>
+			{{/each}}
+		</ul>
+	</div>
+	<div class="col-md-9">
+		{{outlet}}
+	</div>
+</div>

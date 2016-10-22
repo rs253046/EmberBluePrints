@@ -7,6 +7,198 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('classic-cruds', function(){
+    this.route('new');  
+    this.route('classic-crud', {path: '/:classic-crud_id'}, function(){
+      this.route('show');
+      this.route('edit');
+    });
+  });
+
+  this.route('classic-cruds', function(){
+    this.route('new');  
+    this.route('classic-crud', {path: '/:classic-crud_id'}, function(){
+      this.route('show');
+      this.route('edit');
+    });
+  });
+
+  this.route('classic-cruds', function(){
+    this.route('new');  
+    this.route('classic-crud', {path: '/:classic-crud_id'}, function(){
+      this.route('show');
+      this.route('edit');
+    });
+  });
+
+  this.route('classic-cruds', function(){
+    this.route('new');  
+    this.route('classic-crud', {path: '/:classic-crud_id'}, function(){
+      this.route('show');
+      this.route('edit');
+    });
+  });
+
+  this.route('classic-cruds', function(){
+    this.route('new');  
+    this.route('classic-crud', {path: '/:classic-crud_id'}, function(){
+      this.route('show');
+      this.route('edit');
+    });
+  });
+
+  this.route('classic-cruds', function(){
+    this.route('new');  
+    this.route('classic-crud', {path: '/:classic-crud_id'}, function(){
+      this.route('show');
+      this.route('edit');
+    });
+  });
+
+  this.route('classics', function(){
+    this.route('new');  
+    this.route('classic', {path: '/:classic_id'}, function(){
+      this.route('show');
+      this.route('edit');
+    });
+  });
+
+  this.route('classics', function(){
+    this.route('new');  
+    this.route('classic', {path: '/:classic_id'}, function(){
+      this.route('show');
+      this.route('edit');
+    });
+  });
+
+  this.route('classics', function(){
+    this.route('new');  
+    this.route('classic', {path: '/:classic_id'}, function(){
+      this.route('show');
+      this.route('edit');
+    });
+  });
+
+  this.route('classics', function(){
+    this.route('new');  
+    this.route('classic', {path: '/:classic_id'}, function(){
+      this.route('show');
+      this.route('edit');
+    });
+  });
+
+  this.route('classics', function(){
+    this.route('new');  
+    this.route('classic', {path: '/:classic_id'}, function(){
+      this.route('show');
+      this.route('edit');
+    });
+  });
+
+  this.route('classics', function(){
+    this.route('new');  
+    this.route('classic', {path: '/:classic_id'}, function(){
+      this.route('show');
+      this.route('edit');
+    });
+  });
+
+  this.route('classics', function(){
+    this.route('new');  
+    this.route('classic', {path: '/:classic_id'}, function(){
+      this.route('show');
+      this.route('edit');
+    });
+  });
+
+  this.route('classics', function(){
+    this.route('new');  
+    this.route('classic', {path: '/:classic_id'}, function(){
+      this.route('show');
+      this.route('edit');
+    });
+  });
+
+  this.route('classics', function(){
+    this.route('new');  
+    this.route('classic', {path: '/:classic_id'}, function(){
+      this.route('show');
+      this.route('edit');
+    });
+  });
+
+  this.route('classics', function(){
+    this.route('new');  
+    this.route('classic', {path: '/:classic_id'}, function(){
+      this.route('show');
+      this.route('edit');
+    });
+  });
+
+  this.route('classics', function(){
+    this.route('new');  
+    this.route('classic', {path: '/:classic_id'}, function(){
+      this.route('show');
+      this.route('edit');
+    });
+  });
+
+  this.route('classics', function(){
+    this.route('new');  
+    this.route('classic', {path: '/:classic_id'}, function(){
+      this.route('show');
+      this.route('edit');
+    });
+  });
+
+  this.route('classics', function(){
+    this.route('new');  
+    this.route('classic', {path: '/:classic_id'}, function(){
+      this.route('show');
+      this.route('edit');
+    });
+  });
+
+  this.route('classics', function(){
+    this.route('new');  
+    this.route('classic', {path: '/:classic_id'}, function(){
+      this.route('show');
+      this.route('edit');
+    });
+  });
+
+  this.route('classics', function(){
+    this.route('new');  
+    this.route('classic', {path: '/:classic_id'}, function(){
+      this.route('show');
+      this.route('edit');
+    });
+  });
+
+  this.route('classics', function(){
+    this.route('new');  
+    this.route('classic', {path: '/:classic_id'}, function(){
+      this.route('show');
+      this.route('edit');
+    });
+  });
+
+  this.route('classics', function(){
+    this.route('new');  
+    this.route('classic', {path: '/:classic_id'}, function(){
+      this.route('show');
+      this.route('edit');
+    });
+  });
+
+  this.route('classics', function(){
+    this.route('new');  
+    this.route('classic', {path: '/:classic_id'}, function(){
+      this.route('show');
+      this.route('edit');
+    });
+  });
+
   this.route('cruds', function(){
     this.route('new');  
     this.route('crud', {path: '/:crud_id'}, function(){
