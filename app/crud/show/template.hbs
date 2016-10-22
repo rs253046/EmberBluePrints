@@ -1,0 +1,8 @@
+<h1>Show Crud</h1>
+  <div class="crud-attr">name: {{model.name}}</div>
+  <div class="crud-attr">class: {{model.class}}</div>
+<!-- attributes go here -->
+<hr>
+{{#link-to 'crud.edit' model tagname="button" }}Edit{{/link-to}}
+
+<button {{action 'delete'}} class="pull-right">Delete</button>
