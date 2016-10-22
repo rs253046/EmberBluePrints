@@ -5,7 +5,9 @@ module.exports = function(environment) {
     modulePrefix: 'ember-quickstart',
     environment: environment,
     rootURL: '/',
-    locationType: 'auto',
+    locationType: 'history',
+    host: null,
+    namespace: 'api/v1',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -20,6 +22,8 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
+    console.info('asd');
+    ENV.host =  'https://localhost:3000'
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
