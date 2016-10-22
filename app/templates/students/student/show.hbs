@@ -1,0 +1,10 @@
+<h1>Show Student</h1>
+ <div class="crud-input">Title: {{model.student}}</div>
+  <div class="crud-attr">name: {{model.name}}</div>
+  <div class="crud-attr">description: {{model.description}}</div>
+  <div class="crud-attr">is-valid: {{model.is-valid}}</div>
+<!-- attributes go here -->
+<hr>
+{{#link-to 'students.student.edit' model tagname="button" }}Edit{{/link-to}}
+
+<button {{action 'delete'}} class="pull-right">Delete</button>
