@@ -10,6 +10,8 @@ export default function( server ) {
   // server.createList('crud', 10);
   // server.createList('classic', 10);
   let pathLists = [
+    'shin',
+    'shinchan',
     'management',
     'class-manage',
     'class-management',

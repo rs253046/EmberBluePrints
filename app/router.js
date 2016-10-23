@@ -7,6 +7,22 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('shins', function(){
+    this.route('new');  
+    this.route('shin', {path: '/:shin_id'}, function(){
+      this.route('show');
+      this.route('edit');
+    });
+  });
+
+  this.route('shinchans', function(){
+    this.route('new');  
+    this.route('shinchan', {path: '/:shinchan_id'}, function(){
+      this.route('show');
+      this.route('edit');
+    });
+  });
+
   this.route('managements', function(){
     this.route('new');  
     this.route('management', {path: '/:management_id'}, function(){

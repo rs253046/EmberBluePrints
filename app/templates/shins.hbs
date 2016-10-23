@@ -1,0 +1,17 @@
+<div class="container">
+	<div class="col-md-3">
+		{{#link-to 'shins.new' tagname="button" }}New{{/link-to}}
+		<ul>
+		  {{#each model as |shin|}}
+				<li>
+				  {{#link-to 'shins.shin.show' shin tagname="button" }}
+				    {{shin.shin}}
+				  {{/link-to}}
+				</li>
+			{{/each}}
+		</ul>
+	</div>
+	<div class="col-md-9">
+		{{outlet}}
+	</div>
+</div>

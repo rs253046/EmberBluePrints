@@ -3,6 +3,8 @@ export default function() {
   this.namespace = 'api/v1/';
 
   let pathLists = [
+    'shins',
+    'shinchans',
     'managements',
     'class-manages',
     'class-managements',

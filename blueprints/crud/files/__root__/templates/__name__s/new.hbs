@@ -1,5 +1,5 @@
 <h1>New <%= classifiedModuleName %></h1>
 
-{{component 'edit-fields' model=new<%= classifiedModuleName %>}}
+{{component '<%= dasherizedModuleName%>s.edit-fields' model=new<%= classifiedModuleName %>}}
 
 <button {{action 'save'}}>Save</button>

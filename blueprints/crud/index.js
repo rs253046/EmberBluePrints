@@ -19,9 +19,9 @@ module.exports = {
       var dasherizedType = stringUtils.dasherize(type);
       modelAttrs.push(camelizedName + ': ' + dsAttr(dasherizedName, dasherizedType));
       newObjectAttrs.push(camelizedName + ': ' + newObject(dasherizedType));
-      inputAttrs.push('<div class="crud-input">' + dasherizedName + ': ' + 
-        inputField(dasherizedName, dasherizedType) + '</div>');
-      displayAttrs.push('<div class="crud-attr">' + display(dasherizedName, dasherizedType) + '</div>');
+      inputAttrs.push('<div class="crud-input">' + camelizedName + ': ' + 
+        inputField(camelizedName, dasherizedType) + '</div>');
+      displayAttrs.push('<div class="crud-attr">' + display(camelizedName, dasherizedType) + '</div>');
       mirageFactory.push(getMirageFactory(camelizedName, dasherizedType));
     }
     modelAttrs = modelAttrs.join(',' + EOL + '  ');
