@@ -1,0 +1,17 @@
+<div class="container">
+	<div class="col-md-3">
+		{{#link-to 'managements.new' tagname="button" }}New{{/link-to}}
+		<ul>
+		  {{#each model as |management|}}
+				<li>
+				  {{#link-to 'managements.management.show' management tagname="button" }}
+				    {{management.management}}
+				  {{/link-to}}
+				</li>
+			{{/each}}
+		</ul>
+	</div>
+	<div class="col-md-9">
+		{{outlet}}
+	</div>
+</div>

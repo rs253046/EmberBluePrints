@@ -19,7 +19,8 @@ module.exports = {
       var dasherizedType = stringUtils.dasherize(type);
       modelAttrs.push(camelizedName + ': ' + dsAttr(dasherizedName, dasherizedType));
       newObjectAttrs.push(camelizedName + ': ' + newObject(dasherizedType));
-      inputAttrs.push('<div class="crud-input">' + dasherizedName + ': ' + inputField(dasherizedName, dasherizedType) + '</div>');
+      inputAttrs.push('<div class="crud-input">' + dasherizedName + ': ' + 
+        inputField(dasherizedName, dasherizedType) + '</div>');
       displayAttrs.push('<div class="crud-attr">' + display(dasherizedName, dasherizedType) + '</div>');
       mirageFactory.push(getMirageFactory(camelizedName, dasherizedType));
     }
@@ -131,7 +132,17 @@ function updateRouter(name, options) {
   var routerPath = path.join(options.root, 'app', 'router.js');
   var oldContent = fs.readFileSync(routerPath, 'utf-8');
   var plural = name + 's';
-  
+
+  if(oldContent.indexOf(`this.route(\'${plural}\', function(){
+    this.route('new');  
+    this.route(\'${name}\', {path: \'/:${name}_id\'}, function(){
+      this.route('show');
+      this.route('edit');
+    });
+  });`) != -1) {
+    return;
+  }
+
   var newContent = oldContent.replace('Router.map(function() {',
    `Router.map(function() {
   this.route(\'${plural}\', function(){
@@ -142,14 +153,19 @@ function updateRouter(name, options) {
     });
   });${EOL}`
   );
+  
   fs.writeFileSync(routerPath, newContent);
 }
 
 function updateMirageConfig(name, options) {
-   var miragePath = path.join(options.root, 'mirage' , 'config.js');
-   var oldContent = fs.readFileSync(miragePath, 'utf-8');
-   var plural = name + 's';
-  
+  var miragePath = path.join(options.root, 'mirage' , 'config.js');
+
+  var oldContent = fs.readFileSync(miragePath, 'utf-8');
+   
+  var plural = name + 's';
+  if(oldContent.indexOf(`'${plural}',`) != -1) {
+    return;
+  }
    var newContent = oldContent.replace('let pathLists = [',
    `let pathLists = [
     '${plural}',`
@@ -158,11 +174,13 @@ function updateMirageConfig(name, options) {
 }
 
 function updateMirageDbServer(name, options) {
-   var miragePath = path.join(options.root, 'mirage' , 'scenarios', 'default.js');
-   var oldContent = fs.readFileSync(miragePath, 'utf-8');
-   var plural = name + 's';
-  
-   var newContent = oldContent.replace('let pathLists = [',
+  var miragePath = path.join(options.root, 'mirage' , 'scenarios', 'default.js');
+  var oldContent = fs.readFileSync(miragePath, 'utf-8');
+  var plural = name + 's';
+  if(oldContent.indexOf(`'${name}',`) != -1) {
+    return;
+  }  
+  var newContent = oldContent.replace('let pathLists = [',
    `let pathLists = [
     '${name}',`
   );

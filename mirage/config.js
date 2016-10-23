@@ -3,7 +3,9 @@ export default function() {
   this.namespace = 'api/v1/';
 
   let pathLists = [
-    'students',
+    'managements',
+    'class-manages',
+    'class-managements',
     'students',
     'classic-cruds',
     'classics'

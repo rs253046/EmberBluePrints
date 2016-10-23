@@ -10,7 +10,9 @@ export default function( server ) {
   // server.createList('crud', 10);
   // server.createList('classic', 10);
   let pathLists = [
-    'student',
+    'management',
+    'class-manage',
+    'class-management',
     'student',
     'classic-crud',
     'classic'
