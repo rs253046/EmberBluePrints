@@ -10,7 +10,7 @@ export default Ember.Controller.extend({
 		save() {
 			var crud = this.store.createRecord('crud', this.newCrud);
 			crud.save().then((response) => {
-				this.transitionTo('crud.show', response);
+				this.transitionToRoute('cruds.crud.show', response);
 			});
 		}
 	}

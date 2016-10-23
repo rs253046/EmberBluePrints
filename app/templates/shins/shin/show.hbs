@@ -1,0 +1,10 @@
+<h1>Show Shin</h1>
+ <div class="crud-input">Title: {{model.shin}}</div>
+  <div class="crud-attr">studentName: {{model.studentName}}</div>
+  <div class="crud-attr">class: {{model.class}}</div>
+  <div class="crud-attr">isPass: {{model.isPass}}</div>
+<!-- attributes go here -->
+<hr>
+{{#link-to 'shins.shin.edit' model tagname="button" }}Edit{{/link-to}}
+
+<button {{action 'delete'}} class="pull-right">Delete</button>

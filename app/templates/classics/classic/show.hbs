@@ -1,0 +1,8 @@
+<h1>Show Classic</h1>
+  <div class="crud-attr">tess: {{model.tess}}</div>
+  <div class="crud-attr">clas: {{model.clas}}</div>
+<!-- attributes go here -->
+<hr>
+{{#link-to 'classics.classic.edit' model tagname="button" }}Edit{{/link-to}}
+
+<button {{action 'delete'}} class="pull-right">Delete</button>
