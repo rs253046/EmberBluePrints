@@ -19,8 +19,8 @@ module.exports = {
       var dasherizedType = stringUtils.dasherize(type);
       modelAttrs.push(camelizedName + ': ' + dsAttr(dasherizedName, dasherizedType));
       newObjectAttrs.push(camelizedName + ': ' + newObject(dasherizedType));
-      inputAttrs.push('<div class="crud-input">' + camelizedName + ': ' + 
-        inputField(camelizedName, dasherizedType) + '</div>');
+
+      inputAttrs.push(inputString(camelizedName, dasherizedType));
       displayAttrs.push('<div class="crud-attr">' + display(camelizedName, dasherizedType) + '</div>');
       mirageFactory.push(getMirageFactory(camelizedName, dasherizedType));
     }
@@ -109,9 +109,9 @@ function getMirageFactory(name, type) {
 function inputField(name, type) {
   switch (type) {
   case 'boolean':
-    return "{{input type='checkbox' checked=model." + name + " }}"; 
+    return "{{input type='checkbox' checked=model." + name + "}}"; 
   default:
-    return "{{input value=model." + name + " }}";
+    return "{{input value=model." + name + " class='form-control'}}";
   }
 }
 
@@ -185,6 +185,20 @@ function updateMirageDbServer(name, options) {
     '${name}',`
   );
    fs.writeFileSync(miragePath, newContent);
+}
+
+function inputString(camelizedName, dasherizedType) {
+  const inputHtml =
+  `
+              <div class="form-group row">
+                <div class="col-md-4">
+                  <label class="control-label" for="signupName">${camelizedName}</label>
+                </div>
+                <div class="col-md-6">
+                  ${inputField(camelizedName, dasherizedType)}
+                </div>
+              </div>`
+  return inputHtml;
 }
 
 
