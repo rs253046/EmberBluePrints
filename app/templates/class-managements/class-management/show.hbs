@@ -1,0 +1,10 @@
+<h1>Show ClassManagement</h1>
+ <div class="crud-input">Title: {{model.classManagement}}</div>
+  <div class="crud-attr">student-name: {{model.student-name}}</div>
+  <div class="crud-attr">class: {{model.class}}</div>
+  <div class="crud-attr">is-pass: {{model.is-pass}}</div>
+<!-- attributes go here -->
+<hr>
+{{#link-to 'class-managements.class-management.edit' model tagname="button" }}Edit{{/link-to}}
+
+<button {{action 'delete'}} class="pull-right">Delete</button>
